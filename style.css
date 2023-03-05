@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500;700&display=swap');
+
+body {
+  background: rgb(130, 130, 130);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Source Code Pro', monospace;
+  background: -webkit-linear-gradient(10deg, #7c3c74,#3ea389,#cadeca);
+  background: linear-gradient(10deg, #7c3c74,#3ea389,#cadeca);
+  background-repeat: no-repeat;
+  user-select: none;
+  position: relative;
+}
+
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.container {
+  width: 100%;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+  margin: 0;
+  box-shadow: inset 0 0 0 1px #000;
+}
+
+.button {
+  width: 25%;
+  height: 25%;
+  margin: 0;
+  padding: 0;
+  box-shadow: inset 0 0 0 3px #3ea389;
+  outline: none;
+  color: rgb(171, 171, 171);
+  font-size: 30px;
+  background: #000;
+  cursor: pointer;
+  transition: all .18s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+}
+
+.button:hover {
+  box-shadow: inset 0 0 0 3px #02efb4;
+  color: #fff;
+}
+
+.win-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.game-controls-button  {
+  font-size: 18px;
+  color: #bbb;
+  background: #000;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all .3s;
+  box-shadow: 1px 5px 7px rgba(0, 0, 0, .5);
+  font-family: 'Source Code Pro', monospace;
+  letter-spacing: -1px;
+}
+
+.game-controls button:hover {
+  color: #fff;
+}
+
+.stop {
+  width: 83px;
+  background-color: grey;
+  pointer-events: none;
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.save-info {
+  position: absolute;
+  padding: 5px 0px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity .3s ease-out;
+  text-align: center;
+  width: 500px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.game-info span {
+  color: #fff;
+  font-size: 18px;
+  margin-right: 35px;
+}
+
+.game-info span:last-child {
+  margin-right: 0;
+}
+
+.sound-btn {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  background-image: url(/assets/soundsOn.png);
+  background-size: cover;
+  background-position: 0 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.modal-layout {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, .8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal {
+  width: 350px;
+  height: 500px;
+  background: #d4d4d4;
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px #7c3c74;
+  position: relative;
+  text-align: center;
+  transform: scale(0);
+  transition: transform .3s ease-in;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 36px;
+  cursor: pointer;
+  color: #7c3c74;
+  transition: color .3s ease-in-out;
+}
+
+.close-modal:hover,
+.close-modal:active {
+  color: #ac309b;
+}
+
+.modal h3 {
+  margin-top: 30px;
+  text-decoration: underline;
+}
+
+.results-ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.results-ul li {
+  margin-top: 10px;
+}
+
+@media  (max-width: 550px) {
+  .wrapper {
+    max-width: 350px;
+  }
+
+  .container {
+    height: 350px;
+  }
+
+  .button {
+    font-size: 24px;
+  }
+
+  .game-controls-button {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .game-info span {
+    font-size: 16px;
+  }
+
+  .save-info {
+    font-size: 18px;
+  }
+
+  .stop {
+    width: 63px;
+  }
+
+  .save-info {
+    width: 350px;
+  }
+
+  .modal {
+    width: 280px;
+    height: 400px;
+  }
+
+  .sound-btn {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media  (max-width: 370px) {
+  .wrapper {
+    max-width: 300px;
+  }
+
+  .container {
+    height: 300px;
+  }
+
+  .button {
+    font-size: 22px;
+  }
+
+  .game-controls-button {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .game-info span {
+    font-size: 14px;
+  }
+
+  .save-info {
+    font-size: 16px;
+  }
+
+  .stop {
+    width: 43px;
+  }
+
+  .save-info {
+    width: 300px;
+  }
+}
